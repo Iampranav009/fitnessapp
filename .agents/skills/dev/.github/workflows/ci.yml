@@ -1,0 +1,26 @@
+name: Skills validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-docs:
+    name: Skills path and gate parity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify command docs reference product wrappers
+        run: |
+          ! grep -R "npx @fitness360/cli" commands/ rules/ || (echo "Use npm run fitness360:init in product" && exit 1)
+          grep -q "npm run dev:validate" commands/validate.md
+          grep -q "npm run dev:validate" commands/npm.md
+
+      - name: Check scripts exist
+        run: |
+          test -f scripts/validate.ts
+          test -f scripts/debug.ts
+          test -f scripts/doctor.sh

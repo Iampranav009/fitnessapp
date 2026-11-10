@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "dev": {
+      "source": "gymkhana-fitness-360/gymkhana-skills",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "6f8174e1c9100cc50fa680c06e6aa1ca3624451cf9f66c33f120691957085a12"
+    }
+  }
+}

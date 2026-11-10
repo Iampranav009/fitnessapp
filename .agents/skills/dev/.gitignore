@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+
+# Maintainer-only — install locally to workspace .agents/skills/doc-internal/
+doc-internal/
